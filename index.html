@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <title>TradeMe</title>
+	<meta charset="utf-8" />
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="scripts/mustache.js"></script>
+    <script src="scripts/app.js"></script>
+    <link href="Styles.css" rel="stylesheet" />
+    <!--<script> 
+        $(function () {
+            var searchTerm = $(function () {
+
+            });
+         $('#btnSubmit').click(function () {
+             var search_keyword = $('#txtBox').val();
+             var request = $.ajax({
+                 method: "GET",
+                 url: "https://api.trademe.co.nz/v1/Search/General.json?search_string=" + search_keyword + "&oauth_consumer_key=D878095ABE608E6AA6E5C47EBAFAC669&oauth_signature_method=PLAINTEXT&oauth_signature=8745D63A410A399375192C6960298D49%26",
+
+             }).done(function (msg) {
+                 console.log(msg);
+                 var output = Mustache.render(
+                     "{{#List}}<b>{{Title}}</b></br>" +
+                     "<img src='{{PictureHref}}' />" +
+                     "</br>$ {{StartPrice}}" +
+                     "</br>{{Suburb}}"+
+                     "{{/List}}", msg);
+                 $('#content').append(output);
+             });
+             request.fail(function (jqXHR, textStatus) {
+                 console.log(jqXHR);
+             });
+         })
+     });
+     
+    </script>-->
+</head>
+<body>
+    <!--<input id="txtBox" type="text" />
+    <input id="btnSubmit" type="submit" value="Search" />
+
+    <div id="content">
+    </div>-->
+    <div class="container">
+        <header>
+            <h1>Search Trademe!</h1>
+        </header>
+        <div>
+            <input type="text" id="searchTerm"><span id="searchNow" class="fakelink">Search</span>
+        </div>
+        <div id="content">
+            <ul id="listings"></ul>
+            <div id="item"></div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
